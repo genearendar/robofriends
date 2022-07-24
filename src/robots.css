@@ -1,8 +1,22 @@
+.main-container {
+  max-width: 1300px;
+}
+nav {
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.robots-search {
+  width: min(70%, 200px);
+  padding: 0.5em 1em;
+  text-align: center;
+}
 .robots__container {
   display: grid;
   gap: 1em;
   grid-template-columns: repeat(auto-fill, min(50%, 250px));
   justify-content: center;
+  padding: 1em;
 }
 .robot__card {
   border-radius: 5px;

@@ -5,7 +5,7 @@ export default function Search({ value, handleSearch }) {
     <div className="search-bar">
       <input
         className="robots-search"
-        placeholder="Serch robots"
+        placeholder="Search robots"
         onChange={handleSearch}
         value={value}
       ></input>
