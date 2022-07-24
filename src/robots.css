@@ -1,0 +1,21 @@
+.robots__container {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fill, min(50%, 250px));
+  justify-content: center;
+}
+.robot__card {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 1em;
+  background: hsl(120 100% 95%);
+  text-align: center;
+  box-shadow: 1px 1px 2px 1px hsl(0 0% 0% / 20%);
+}
+
+.robot__card img {
+  max-width: 100%;
+}
