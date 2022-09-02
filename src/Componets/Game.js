@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import RobotsList from "./Robots-list";
 
-export default function Game() {
+export default function Game({ robots }) {
   return (
     <main>
-      <h1> game </h1>
+      <RobotsList robots={robots} />
     </main>
   );
 }

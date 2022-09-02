@@ -27,7 +27,7 @@ function App() {
     <div className="main-container">
       <Navigation handlePages={handlePages} />
       {pageHandler.currentPage === "game" ? (
-        <Game />
+        <Game robots={robots} />
       ) : (
         <Catalogue robots={robots} />
       )}
