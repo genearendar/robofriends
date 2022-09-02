@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
-import Catalogue from "./Catlogue";
+import Catalogue from "./Catalogue";
 import Game from "./Game";
 
 function App() {
@@ -51,6 +51,7 @@ function App() {
   return (
     <div className="main-container">
       <Navigation handlePages={handlePages} />
+      {pageHandler.currentPage === "game" ? <Game /> : <Catalogue />}
     </div>
   );
 }
