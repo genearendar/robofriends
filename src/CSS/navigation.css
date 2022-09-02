@@ -1,0 +1,16 @@
+nav {
+  padding: 1em;
+  text-align: center;
+}
+.main-nav-container {
+  width: 40%;
+  margin-inline: auto 0;
+}
+
+.main-nav {
+  list-style: none;
+}
+
+.main-nav li {
+  padding-inline: 0.5em;
+}

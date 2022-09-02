@@ -1,10 +1,6 @@
 .main-container {
   max-width: 1300px;
 }
-nav {
-  padding: 2em 1em;
-  text-align: center;
-}
 
 .robots-search {
   width: min(70%, 200px);

@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="main-container">
       <Navigation />
-      <div>
+      <div className="hero">
         <h1>My RoboFriends</h1>
         <Search value={search} handleSearch={handleSearch} />
       </div>
