@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import RobotsList from "./Robots-list";
 import Search from "./Search";
 import Scroll from "./Scroll";
 
-export default function Catalogue() {
+export default function Catalogue({ robots }) {
+  const [search, setSearch] = useState("");
+  function handleSearch(event) {
+    const { value } = event.target;
+    setSearch(value);
+  }
+
+  const filteredRobots = robots.filter((robot) => {
+    const values = Object.values(robot);
+    const regex = new RegExp(search, "i");
+    return values.some((val) => {
+      let result = regex.test(val);
+      return result;
+    });
+  });
+
+  useEffect(() => {
+    const filteredRobots = robots.filter((robot) => {
+      const values = Object.values(robot);
+      const regex = new RegExp(search, "i");
+      return values.some((val) => {
+        let result = regex.test(val);
+        return result;
+      });
+    });
+  }, [search]);
+
   return (
     <main>
       <div className="hero">
