@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from "react"
-import RobotsList from "./Robots-list"
-import Search from "./Search"
-import Scroll from "./Scroll"
+import React, { useState, useEffect } from "react";
+import RobotsList from "./Robots-list";
+import Search from "./Search";
+import Scroll from "./Scroll";
 
 function App() {
-  const [search, setSearch] = useState("")
-  const [robots, setRobots] = useState([])
+  const [search, setSearch] = useState("");
+  const [robots, setRobots] = useState([]);
 
   function handleSearch(event) {
-    const { value } = event.target
-    setSearch(value)
+    const { value } = event.target;
+    setSearch(value);
   }
 
   const filteredRobots = robots.filter((robot) => {
-    const values = Object.values(robot)
-    const regex = new RegExp(search, "i")
+    const values = Object.values(robot);
+    const regex = new RegExp(search, "i");
     return values.some((val) => {
-      let result = regex.test(val)
-      return result
-    })
-  })
+      let result = regex.test(val);
+      return result;
+    });
+  });
 
   useEffect(() => {
     const filteredRobots = robots.filter((robot) => {
-      const values = Object.values(robot)
-      const regex = new RegExp(search, "i")
+      const values = Object.values(robot);
+      const regex = new RegExp(search, "i");
       return values.some((val) => {
-        let result = regex.test(val)
-        return result
-      })
-    })
-  }, [search])
+        let result = regex.test(val);
+        return result;
+      });
+    });
+  }, [search]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
-      .then((data) => setRobots(data))
-  }, [])
+      .then((data) => setRobots(data));
+  }, []);
 
   return (
     <div className="main-container">
@@ -48,7 +48,7 @@ function App() {
         <RobotsList robots={filteredRobots} />
       </Scroll>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
