@@ -1,13 +1,13 @@
 import React from "react";
 import "../CSS/navigation.css";
 
-export default function Navigation() {
+export default function Navigation({ handlePages }) {
   return (
     <nav>
       <div className="main-nav-container">
         <ul className="main-nav d-flex">
-          <li>Catalogue</li>
-          <li>Memory Game</li>
+          <li onClick={() => handlePages("catalogue")}>Catalogue</li>
+          <li onClick={() => handlePages("game")}>Memory Game</li>
         </ul>
       </div>
     </nav>

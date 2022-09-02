@@ -5,9 +5,19 @@ import Search from "./Search";
 import Scroll from "./Scroll";
 
 function App() {
+  const [pageHandler, setPageHandler] = useState({
+    pages: ["catalogue", "game"],
+    currentPage: "catalogue",
+  });
   const [search, setSearch] = useState("");
   const [robots, setRobots] = useState([]);
 
+  function handlePages(val) {
+    if (val !== pageHandler.currentPage)
+      setPageHandler((prevPageHandler) => {
+        return { ...prevPageHandler, currentPage: val };
+      });
+  }
   function handleSearch(event) {
     const { value } = event.target;
     setSearch(value);
@@ -41,7 +51,7 @@ function App() {
 
   return (
     <div className="main-container">
-      <Navigation />
+      <Navigation handlePages={handlePages} />
       <div className="hero">
         <h1>My RoboFriends</h1>
         <Search value={search} handleSearch={handleSearch} />
