@@ -1,4 +1,7 @@
 import React from "react";
+import RobotsList from "./Robots-list";
+import Search from "./Search";
+import Scroll from "./Scroll";
 
 export default function Catalogue() {
   return (

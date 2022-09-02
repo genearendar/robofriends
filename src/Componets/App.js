@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
-import RobotsList from "./Robots-list";
-import Search from "./Search";
-import Scroll from "./Scroll";
+import Catalogue from "./Catlogue";
+import Game from "./Game";
 
 function App() {
   const [pageHandler, setPageHandler] = useState({
@@ -52,13 +51,6 @@ function App() {
   return (
     <div className="main-container">
       <Navigation handlePages={handlePages} />
-      <div className="hero">
-        <h1>My RoboFriends</h1>
-        <Search value={search} handleSearch={handleSearch} />
-      </div>
-      <Scroll>
-        <RobotsList robots={filteredRobots} />
-      </Scroll>
     </div>
   );
 }
