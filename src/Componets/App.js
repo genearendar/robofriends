@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navigation from "./Navigation";
 import RobotsList from "./Robots-list";
 import Search from "./Search";
 import Scroll from "./Scroll";
@@ -40,10 +41,11 @@ function App() {
 
   return (
     <div className="main-container">
-      <nav>
+      <Navigation />
+      <div>
         <h1>My RoboFriends</h1>
         <Search value={search} handleSearch={handleSearch} />
-      </nav>
+      </div>
       <Scroll>
         <RobotsList robots={filteredRobots} />
       </Scroll>

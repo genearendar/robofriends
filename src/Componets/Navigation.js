@@ -1,5 +1,5 @@
-import React from "React";
-import "../CSS/Navigation.css";
+import React from "react";
+//import "../CSS/navigation.css";
 
 export default function Navigation() {
   return (
