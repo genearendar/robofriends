@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RobotsList from "./Robots-list";
+import Score from "./Score";
 
 export default function Game({ robots }) {
   const [shuffledRobots, setShuffledRobots] = useState(
@@ -20,6 +21,7 @@ export default function Game({ robots }) {
 
   return (
     <main>
+      <Score />
       <RobotsList robots={shuffledRobots} selectRobot={selectRobot} />
     </main>
   );
