@@ -4,7 +4,7 @@ import RobotsList from "./Robots-list";
 export default function Game({ robots }) {
   return (
     <main>
-      <RobotsList robots={robots} />
+      <RobotsList robots={robots} game={true} />
     </main>
   );
 }

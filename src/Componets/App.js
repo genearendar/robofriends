@@ -10,13 +10,15 @@ function App() {
   });
   const [robots, setRobots] = useState([]);
 
+  // Switch between catalogue and Game
+
   function handlePages(val) {
     if (val !== pageHandler.currentPage)
       setPageHandler((prevPageHandler) => {
         return { ...prevPageHandler, currentPage: val };
       });
   }
-
+  // Fetching robots data from API
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())

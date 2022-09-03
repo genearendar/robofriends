@@ -2,7 +2,15 @@ import React from "react";
 import RobotCard from "./Robot-card";
 import "../CSS/robots.css";
 
-export default function RobotsList({ robots }) {
+// Shuffling cards for the game
+
+export default function RobotsList({ robots, game }) {
+  if (game) {
+    console.log("Game logic");
+  }
+  function shuffle() {
+    const shuffledRobots = robots.sort(() => Math.random() - 0.5);
+  }
   const robotCards = robots.map((robot) => {
     return (
       <RobotCard

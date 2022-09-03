@@ -19,17 +19,6 @@ export default function Catalogue({ robots }) {
     });
   });
 
-  useEffect(() => {
-    const filteredRobots = robots.filter((robot) => {
-      const values = Object.values(robot);
-      const regex = new RegExp(search, "i");
-      return values.some((val) => {
-        let result = regex.test(val);
-        return result;
-      });
-    });
-  }, [search]);
-
   return (
     <main>
       <div className="hero">
