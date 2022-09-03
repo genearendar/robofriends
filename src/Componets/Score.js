@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Score() {
+export default function Score({ currentScore }) {
   return (
     <div className="score-panel d-flex">
       <div>
@@ -9,7 +9,7 @@ export default function Score() {
       </div>
       <div>
         <span>High Score</span>
-        <span>0</span>
+        <span>{currentScore}</span>
       </div>
     </div>
   );
