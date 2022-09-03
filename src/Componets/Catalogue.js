@@ -9,7 +9,6 @@ export default function Catalogue({ robots }) {
     const { value } = event.target;
     setSearch(value);
   }
-
   const filteredRobots = robots.filter((robot) => {
     const values = Object.values(robot);
     const regex = new RegExp(search, "i");
