@@ -4,7 +4,8 @@ import "../CSS/robots.css";
 
 // Shuffling cards for the game
 
-export default function RobotsList({ robots, game }) {
+export default function RobotsList({ robots, shuffleRobots }) {
+  console.log("in component: " + robots);
   const robotCards = robots.map((robot) => {
     return (
       <RobotCard
@@ -12,6 +13,7 @@ export default function RobotsList({ robots, game }) {
         name={robot.name}
         email={robot.email}
         key={robot.id}
+        shuffleRobots={shuffleRobots}
       />
     );
   });

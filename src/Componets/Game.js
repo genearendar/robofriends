@@ -6,7 +6,7 @@ export default function Game({ robots }) {
     [...robots].sort(() => Math.random() - 0.5)
   );
   function shuffleRobots() {
-    return setShuffledRobots(robots.sort(() => Math.random() - 0.5));
+    setShuffledRobots([...robots].sort(() => Math.random() - 0.5));
   }
   return (
     <main>
