@@ -12,5 +12,9 @@ nav {
 }
 
 .main-nav li {
-  padding-inline: 0.5em;
+  margin-inline: 1em;
+}
+
+.main-nav li.active {
+  border-bottom: 3px solid blue;
 }

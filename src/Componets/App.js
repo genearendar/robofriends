@@ -11,10 +11,11 @@ function App() {
 
   // Switch between catalogue and Game
   function handlePages(val) {
-    if (val !== pageHandler.currentPage)
+    if (val !== pageHandler.currentPage) {
       setPageHandler((prevPageHandler) => {
         return { ...prevPageHandler, currentPage: val };
       });
+    }
   }
 
   const [robots, setRobots] = useState([]);
@@ -26,7 +27,10 @@ function App() {
   }, []);
   return (
     <div className="main-container">
-      <Navigation handlePages={handlePages} />
+      <Navigation
+        handlePages={handlePages}
+        currentPage={pageHandler.currentPage}
+      />
       {pageHandler.currentPage === "game" ? (
         <Game robots={robots} />
       ) : (
