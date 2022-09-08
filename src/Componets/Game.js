@@ -66,7 +66,14 @@ export default function Game({ robots }) {
   return (
     <main>
       <Score currentScore={currentScore} highScore={highScore} />
-      {!isAlive && <h1> Game over</h1>}
+      {!isAlive && (
+        <div className="game_over-container">
+          <h1> Game over</h1>
+          <button className="btn new-game-btn" onClick={newGame}>
+            New Game
+          </button>
+        </div>
+      )}
       <RobotsList robots={gameRobots} selectRobot={selectRobot} />
     </main>
   );
