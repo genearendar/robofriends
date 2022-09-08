@@ -4,11 +4,14 @@ import Score from "./Score";
 
 export default function Game({ robots }) {
   const [gameRobots, setGameRobots] = useState(
-    robots.map((robot) => ({ ...robot, isSelected: false }))
+    robots
+      .map((robot) => ({ ...robot, isSelected: false }))
+      .sort(() => Math.random() - 0.5)
   );
-  const [shuffledRobots, setShuffledRobots] = useState(
-    [...gameRobots].sort(() => Math.random() - 0.5)
-  );
+  const [isAlive, setIsAlive] = useState(true);
+  // const [shuffledRobots, setShuffledRobots] = useState(
+  //   [...gameRobots].sort(() => Math.random() - 0.5)
+  // );
   let [currentScore, setCurrentScore] = useState(0);
   let [highScore, setHighScore] = useState(
     localStorage.getItem("highScore") !== null
@@ -24,34 +27,47 @@ export default function Game({ robots }) {
     localStorage.setItem("highScore", highScore.toString());
   }, [highScore]);
 
-  function selectRobot(event) {
-    if (event.target.isSelected) {
-      setCurrentScore(0);
-      shuffleRobots();
-      endGame();
-      return;
-    }
-    event.target.isSelected = true;
+  function selectRobot(id) {
+    setGameRobots((prevRobots) =>
+      prevRobots.map((robot) => {
+        if (robot.id === id) {
+          if (!robot.isSelected) {
+            return { ...robot, isSelected: true };
+          }
+          endGame();
+          return { ...robot, isSelected: true };
+        }
+        return robot;
+      })
+    );
 
     setCurrentScore((prevScore) => prevScore + 1);
-
     shuffleRobots();
-
-    function shuffleRobots() {
-      setShuffledRobots([...robots].sort(() => Math.random() - 0.5));
-    }
   }
-
+  function shuffleRobots() {
+    setGameRobots((prevGameRobots) =>
+      prevGameRobots.sort(() => Math.random() - 0.5)
+    );
+  }
   function endGame() {
+    setIsAlive(false);
+    setCurrentScore(0);
+    console.log("gameOver");
+
     setGameRobots((prevGameRobots) =>
       prevGameRobots.map((robot) => ({ ...robot, isSelected: false }))
     );
   }
 
+  function newGame() {
+    setIsAlive(true);
+  }
+
   return (
     <main>
       <Score currentScore={currentScore} highScore={highScore} />
-      <RobotsList robots={shuffledRobots} selectRobot={selectRobot} />
+      {!isAlive && <h1> Game over</h1>}
+      <RobotsList robots={gameRobots} selectRobot={selectRobot} />
     </main>
   );
 }

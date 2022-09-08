@@ -2,7 +2,7 @@ import React from "react";
 
 export default function RobotCard({ name, email, id, selectRobot }) {
   return (
-    <div className="robot__card" onClick={selectRobot}>
+    <div className="robot__card" onClick={() => selectRobot(id)}>
       <img src={`https://robohash.org/${id}`} alt="robot" />
       <h2>{name}</h2>
       <p>{email}</p>

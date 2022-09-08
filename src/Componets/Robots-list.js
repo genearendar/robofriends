@@ -13,7 +13,7 @@ export default function RobotsList({ robots, selectRobot }) {
         email={robot.email}
         key={robot.id}
         selectRobot={selectRobot}
-        isSelected={false}
+        isSelected={robot.isSelected}
       />
     );
   });
