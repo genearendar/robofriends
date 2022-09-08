@@ -3,8 +3,11 @@ import RobotsList from "./Robots-list";
 import Score from "./Score";
 
 export default function Game({ robots }) {
+  const [gameRobots, setGameRobots] = useState(
+    robots.map((robot) => ({ ...robot, isSelected: false }))
+  );
   const [shuffledRobots, setShuffledRobots] = useState(
-    [...robots].sort(() => Math.random() - 0.5)
+    [...gameRobots].sort(() => Math.random() - 0.5)
   );
   let [currentScore, setCurrentScore] = useState(0);
   let [highScore, setHighScore] = useState(
@@ -25,7 +28,7 @@ export default function Game({ robots }) {
     if (event.target.isSelected) {
       setCurrentScore(0);
       shuffleRobots();
-      console.log("you lost");
+      endGame();
       return;
     }
     event.target.isSelected = true;
@@ -37,6 +40,12 @@ export default function Game({ robots }) {
     function shuffleRobots() {
       setShuffledRobots([...robots].sort(() => Math.random() - 0.5));
     }
+  }
+
+  function endGame() {
+    setGameRobots((prevGameRobots) =>
+      prevGameRobots.map((robot) => ({ ...robot, isSelected: false }))
+    );
   }
 
   return (
