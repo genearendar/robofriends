@@ -52,7 +52,6 @@ export default function Game({ robots }) {
   function endGame() {
     setIsAlive(false);
     setCurrentScore(0);
-    console.log("gameOver");
 
     setGameRobots((prevGameRobots) =>
       prevGameRobots.map((robot) => ({ ...robot, isSelected: false }))
@@ -65,6 +64,8 @@ export default function Game({ robots }) {
 
   return (
     <main>
+      <h1>Memorise your Robots</h1>
+      <p>Click on a robot the you haven't selected yet to gain score</p>
       <Score currentScore={currentScore} highScore={highScore} />
       {!isAlive && (
         <div className="game_over-container">
