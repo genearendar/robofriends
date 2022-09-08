@@ -9,9 +9,6 @@ export default function Game({ robots }) {
       .sort(() => Math.random() - 0.5)
   );
   const [isAlive, setIsAlive] = useState(true);
-  // const [shuffledRobots, setShuffledRobots] = useState(
-  //   [...gameRobots].sort(() => Math.random() - 0.5)
-  // );
   let [currentScore, setCurrentScore] = useState(0);
   let [highScore, setHighScore] = useState(
     localStorage.getItem("highScore") !== null
@@ -64,18 +61,22 @@ export default function Game({ robots }) {
 
   return (
     <main>
-      <h1>Memorise your Robots</h1>
-      <p>Click on a robot the you haven't selected yet to gain score</p>
-      <Score currentScore={currentScore} highScore={highScore} />
-      {!isAlive && (
-        <div className="game_over-container">
-          <h1> Game over</h1>
-          <button className="btn new-game-btn" onClick={newGame}>
-            New Game
-          </button>
+      <div className="container">
+        <div className="hero">
+          <h1>Memorise your Robots</h1>
+          <p>Click on a robot the you haven't selected yet to gain score</p>
+          <Score currentScore={currentScore} highScore={highScore} />
+          {!isAlive && (
+            <div className="game_over-container">
+              <h1> Game over</h1>
+              <button className="btn new-game-btn" onClick={newGame}>
+                New Game
+              </button>
+            </div>
+          )}
         </div>
-      )}
-      <RobotsList robots={gameRobots} selectRobot={selectRobot} />
+        <RobotsList robots={gameRobots} selectRobot={selectRobot} />
+      </div>
     </main>
   );
 }

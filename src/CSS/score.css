@@ -1,0 +1,13 @@
+.score-panel {
+  margin-block: 2em;
+  justify-content: center;
+}
+
+.score-panel__field {
+  margin-inline: 1em;
+  font-size: 1.3em;
+}
+
+.score-panel__field span {
+  margin-inline: 0.5em;
+}

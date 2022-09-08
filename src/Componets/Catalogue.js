@@ -20,13 +20,15 @@ export default function Catalogue({ robots }) {
 
   return (
     <main>
-      <div className="hero">
-        <h1>My RoboFriends</h1>
-        <Search value={search} handleSearch={handleSearch} />
+      <div className="container">
+        <div className="hero">
+          <h1>My RoboFriends</h1>
+          <Search value={search} handleSearch={handleSearch} />
+        </div>
+        <Scroll>
+          <RobotsList robots={filteredRobots} />
+        </Scroll>
       </div>
-      <Scroll>
-        <RobotsList robots={filteredRobots} />
-      </Scroll>
     </main>
   );
 }

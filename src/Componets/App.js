@@ -26,7 +26,7 @@ function App() {
       .then((data) => setRobots(data));
   }, []);
   return (
-    <div className="main-container">
+    <div className="app">
       <Navigation
         handlePages={handlePages}
         currentPage={pageHandler.currentPage}

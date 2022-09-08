@@ -5,7 +5,7 @@ export default function Navigation({ handlePages, currentPage }) {
   console.log(currentPage);
   return (
     <nav>
-      <div className="main-nav-container">
+      <div className="container main-nav-container">
         <ul className="main-nav d-flex">
           <li
             onClick={() => handlePages("catalogue")}
