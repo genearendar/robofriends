@@ -70,7 +70,7 @@ export default function Game({ robots }) {
       <div className="container game__container">
         <div className="hero">
           <h1>Memorise your Robots</h1>
-          <p>Click on a robot the you haven't selected yet to gain score</p>
+          <p>Click on a robot that you haven't selected yet to gain score</p>
           <Score currentScore={currentScore} highScore={highScore} />
           {!isAlive && <GameOver newGame={newGame} score={currentScore} />}
         </div>
