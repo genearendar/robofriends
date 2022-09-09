@@ -9,6 +9,10 @@
   grid-template-columns: repeat(auto-fill, min(50%, 250px));
   justify-content: center;
 }
+.game__container .robots__container {
+  grid-template-columns: repeat(auto-fill, min(30%, 150px));
+}
+
 .robot__card {
   border-radius: 5px;
   -webkit-border-radius: 5px;

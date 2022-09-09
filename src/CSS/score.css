@@ -1,6 +1,8 @@
 .score-panel {
   margin-block: 2em;
   justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .score-panel__field {

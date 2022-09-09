@@ -64,7 +64,7 @@ export default function Game({ robots }) {
 
   return (
     <main>
-      <div className="container game-container">
+      <div className="container game__container">
         <div className="hero">
           <h1>Memorise your Robots</h1>
           <p>Click on a robot the you haven't selected yet to gain score</p>
