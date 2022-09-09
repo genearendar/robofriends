@@ -33,12 +33,10 @@ export default function Game({ robots }) {
             return { ...robot, isSelected: true };
           }
           endGame();
-          return { ...robot, isSelected: true };
         }
         return robot;
       })
     );
-
     setCurrentScore((prevScore) => prevScore + 1);
     shuffleRobots();
   }

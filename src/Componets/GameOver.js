@@ -10,7 +10,7 @@ export default function GameOver({ newGame, score }) {
     <div className="game-over__container">
       <div className="game-over__card">
         <h1> Game over</h1>
-        <p>You scored {score} points</p>
+        <p>You scored {score - 1} points</p>
         <button className="btn new-game-btn" onClick={newGame}>
           New Game
         </button>
