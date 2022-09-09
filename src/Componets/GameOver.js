@@ -2,6 +2,10 @@ import React from "react";
 import "../CSS/gameover.css";
 
 export default function GameOver({ newGame, score }) {
+  window.scrollTo(0, 0);
+  const bodyEl = document.querySelector("body");
+
+  bodyEl.classList.add("locked");
   return (
     <div className="game-over__container">
       <div className="game-over__card">

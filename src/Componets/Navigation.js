@@ -2,7 +2,6 @@ import React from "react";
 import "../CSS/navigation.css";
 
 export default function Navigation({ handlePages, currentPage }) {
-  console.log(currentPage);
   return (
     <nav>
       <div className="container main-nav-container">

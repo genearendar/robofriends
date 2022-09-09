@@ -57,6 +57,8 @@ export default function Game({ robots }) {
 
   function newGame() {
     setCurrentScore(0);
+    const bodyEl = document.querySelector("body");
+    bodyEl.classList.remove("locked");
     setIsAlive(true);
   }
 
