@@ -1,0 +1,24 @@
+.game-over__container {
+  background: rgba(15, 15, 15, 0.8);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-over__card {
+  background: rgba(236, 236, 236, 0.9);
+  height: min(50vh, 300px);
+  width: min(80vw, 300px);
+  padding-top: 4em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

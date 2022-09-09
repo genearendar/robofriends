@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RobotsList from "./Robots-list";
 import Score from "./Score";
+import GameOver from "./GameOver";
 
 export default function Game({ robots }) {
   const [gameRobots, setGameRobots] = useState(
@@ -48,7 +49,6 @@ export default function Game({ robots }) {
   }
   function endGame() {
     setIsAlive(false);
-    setCurrentScore(0);
 
     setGameRobots((prevGameRobots) =>
       prevGameRobots.map((robot) => ({ ...robot, isSelected: false }))
@@ -56,24 +56,18 @@ export default function Game({ robots }) {
   }
 
   function newGame() {
+    setCurrentScore(0);
     setIsAlive(true);
   }
 
   return (
     <main>
-      <div className="container">
+      <div className="container game-container">
         <div className="hero">
           <h1>Memorise your Robots</h1>
           <p>Click on a robot the you haven't selected yet to gain score</p>
           <Score currentScore={currentScore} highScore={highScore} />
-          {!isAlive && (
-            <div className="game_over-container">
-              <h1> Game over</h1>
-              <button className="btn new-game-btn" onClick={newGame}>
-                New Game
-              </button>
-            </div>
-          )}
+          {!isAlive && <GameOver newGame={newGame} score={currentScore} />}
         </div>
         <RobotsList robots={gameRobots} selectRobot={selectRobot} />
       </div>
