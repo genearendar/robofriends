@@ -25,6 +25,12 @@ export default function Game({ robots }) {
     localStorage.setItem("highScore", highScore.toString());
   }, [highScore]);
 
+  useEffect(() => {
+    if (currentScore === gameRobots.length) {
+      endGame();
+    }
+  }, [currentScore]);
+
   function selectRobot(id) {
     setGameRobots((prevRobots) =>
       prevRobots.map((robot) => {
@@ -47,7 +53,6 @@ export default function Game({ robots }) {
   }
   function endGame() {
     setIsAlive(false);
-
     setGameRobots((prevGameRobots) =>
       prevGameRobots.map((robot) => ({ ...robot, isSelected: false }))
     );
